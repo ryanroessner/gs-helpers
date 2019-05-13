@@ -93,8 +93,8 @@ ease:Circ.easeOut
 function addEventListeners() {
          document.getElementById("ad").addEventListener("click", clickthrough);
          document.getElementById("ad").addEventListener("mouseover", mouseOver);
-         document.getElementById("cta").addEventListener("mouseover", legalRollover, false);   
-         document.getElementById("cta").addEventListener("mouseout", legalRollout, false); 
+         document.getElementById("cta").addEventListener("mouseover", Rollover, false);   
+         document.getElementById("cta").addEventListener("mouseout", Rollout, false); 
 
 
     }

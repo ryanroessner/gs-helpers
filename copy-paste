@@ -1,0 +1,108 @@
+//GSAP SHEET-
+
+//Force 3d
+TweenMax.to("#element", 8, {scale:3, force3D:false});
+
+//Timers
+TweenMax.delayedCall(4.5, myFunction);
+TweenMax.killTweensOf(myFunction);
+
+// autoAlpha
+TweenMax.to(#element, 2, {autoAlpha:0});
+            
+//SlowMo Ease            
+TweenMax.to("#element", 2, {x:220, ease:new SlowMo(0.5, 0.8), yoyo:true, repeat:-1});          
+
+// Transform origin
+TweenMax.to(#element, 2, {rotation:360, transformOrigin: "right top"});
+                     
+//Stepped Ease Spritesheet          
+TweenMax.to("#box", .5, {backgroundPosition:"-1800px 0px", ease:SteppedEase.config(9), yoyo:true, repeat:-1, repeatDelay:1})            
+            
+
+function stopAnimation(){
+    TweenMax.killAll();
+}
+
+
+TweenMax.delayedCall(15, stopAnimation); 
+
+
+function makeClones() {
+        for (var i = 0; i < 50; i++) {
+           var dropClone = originalDrop.cloneNode(true);
+           TweenMax.set(dropClone,  {x:i*1,y:(750 + Math.random()*100-100),alpha:1,rotation:(Math.random()*90)});
+           // TweenMax.to(dropClone, 1, {y:120, x:(Math.random()*300), scale:(Math.random()*2), alpha:1,delay:i/10});
+           TweenMax.to(dropClone,15, { bezier:[{x:(Math.random()*200), y:200}, {x:(Math.random()*100), y:90}, {x:(Math.random()*300), y:-100}], scale:(Math.random()*1),alpha:1,delay:(Math.random()*15)});
+           dropHolder.appendChild(dropClone);    
+       }
+    }
+
+//linear
+ease:Power0.easeNone
+//
+ease:Power1.easeIn
+ease:Power1.easeInOut
+ease:Power1.easeOut
+//
+ease:Power2.easeIn
+ease:Power2.easeInOut
+ease:Power2.easeOut
+//
+ease:Power3.easeIn
+ease:Power3.easeInOut
+ease:Power3.easeOut
+//
+ease:Power4.easeIn
+ease:Power4.easeInOut
+ease:Power4.easeOut
+//
+ease:Back.easeIn.config(1.7);
+ease:Back.easeInOut.config(1.7);
+ease:Back.easeOut.config(1.7);
+//
+ease:Elastic.easeIn.config(1, 0.5)
+ease:Elastic.easeInOut.config(1, 0.5)
+ease:Elastic.easeOut.config(1, 0.5)
+//
+ease:Bounce.easeIn
+ease:Bounce.easeInOut
+ease:Bounce.easeOut
+//
+ease:Expo.easeIn
+ease:Expo.easeInOut
+ease:Expo.easeOut
+//
+ease:Sine.easeIn
+ease:Sine.easeInOut
+ease:Sine.easeOut
+//
+ease:RoughEase.ease.config({ template: Power0.easeNone, strength: 1, points: 20, taper: "none", randomize: true, clamp: false}
+//                          
+ease:SlowMo.ease.config(0.7, 0.7, false)
+//
+ease: SteppedEase.config(12)
+//
+ease:Circ.easeIn
+ease:Circ.easeInOut
+ease:Circ.easeOut
+//
+
+
+
+function addEventListeners() {
+         document.getElementById("ad").addEventListener("click", clickthrough);
+         document.getElementById("ad").addEventListener("mouseover", mouseOver);
+         document.getElementById("cta").addEventListener("mouseover", legalRollover, false);   
+         document.getElementById("cta").addEventListener("mouseout", legalRollout, false); 
+
+
+    }
+
+    function rollover() {
+        TweenMax.to(".cta",  .25, {y:557}) ;
+    }
+
+    function Rollout() {
+        TweenMax.to(".cta",  .25, {y:586}) ;
+    }
